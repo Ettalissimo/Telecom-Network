@@ -2,9 +2,7 @@ import subprocess
 import threading
 
 def execute_script(script_path):
-    """
-    Exécute un script Python en tant que sous-processus.
-    """
+
     try:
         print(f"Exécution de {script_path}...")
         result = subprocess.run(["python3", script_path], check=True, text=True, capture_output=True)
@@ -15,9 +13,7 @@ def execute_script(script_path):
         print(f"Le fichier {script_path} est introuvable.")
 
 def main():
-    """
-    Exécute plusieurs scripts Python et enchaîne avec un autre après leur achèvement.
-    """
+
     scripts_to_run_first = ["./Algorithm/static.py", "./Algorithm/load_balancing.py","./Algorithm/adaptatif.py"]  # Liste des scripts à exécuter en premier
     final_script = "./comparaison-protocol.py"  # Script à exécuter après les autres
     animation_script = "./Animations/static.py"

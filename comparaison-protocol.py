@@ -22,8 +22,8 @@ plt.plot(simulation_3_data[:, 0], simulation_3_data[:, 1], label="Routage adapta
 plt.xlabel("Total Attempted Calls")
 plt.ylabel("Number of Rejected Calls")
 plt.title("Rejected Calls vs. Attempted Calls for Three Simulations")
-# plt.ylim(0, 150)  # Set y-axis limit to a maximum of 150
-# plt.xlim(0, 150)  # Set y-axis limit to a maximum of 150
+# plt.ylim(0, 150) 
+# plt.xlim(0, 150)  
 plt.legend()
 plt.grid(True)
 plt.show()

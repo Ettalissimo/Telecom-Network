@@ -89,10 +89,6 @@ while time_step < simulation_duration:
     # Record statistics
     record_statistics()
 
-# Output results
-print(f"Total attempted calls: {total_attempted_calls}")
-print(f"Successful calls: {successful_calls}")
-print(f"Failed calls: {failed_calls}")
 
 # Sauvegarder les résultats dans un fichier
 np.savez("./Results/simulation_load_balancing_results.npz", call_rejections=np.array(call_rejections))
@@ -102,14 +98,3 @@ success_rate = 100 * successful_calls / (failed_calls + successful_calls)
 print(f"Call success rate: {success_rate:.2f}%")
 
 
-# Plot rejected calls over time
-call_rejections_over_time = np.array(call_rejections)
-plt.figure(figsize=(10, 6))
-plt.plot(call_rejections_over_time[:, 0], call_rejections_over_time[:, 1], label="Rejected Calls", color="crimson", linewidth=2)
-plt.xlabel("Total Attempted Calls")
-plt.ylabel("Number of Rejected Calls")
-plt.title("Rejected Calls vs. Attempted Calls")
-plt.ylim(0, 150)  # Set y-axis limit to a maximum of 150
-plt.legend()
-plt.grid(True)
-# plt.show()
